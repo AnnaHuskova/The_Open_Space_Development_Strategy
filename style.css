@@ -1,0 +1,128 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(230, 230, 230);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+._container {
+    max-width: 1200px;
+    min-height: 100%;
+    margin: 0px auto;
+    padding: 0px 15px;
+    display: flex;
+
+}
+
+body{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 90px 94vh;
+    grid-template-areas: 'menu menu'
+                        'submenu map'
+    ;
+}
+
+/* MAIN MENU */
+
+.header {
+    /* position: fixed; */
+    background: rgb(34, 34, 34);
+    /* top: 0; */
+    /* z-index: 10; */
+    width: 100%;
+    height: 90px;
+    grid-area: menu;
+
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.nav_logo {
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 21px;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    gap: 90px;
+}
+
+.nav_item {
+    text-decoration: none;
+    color: antiquewhite;
+    transition: 0.3s;
+
+}
+
+.nav_item:hover {
+    color: rgb(0, 255, 157);
+}
+
+
+.burger-bar {
+    display: none;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+
+.nav {
+    display: flex;
+    /* position: fixed; */
+    background: rgb(53, 58, 57);
+    width: 70px;
+    height: 100%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    grid-area: submenu;
+}
+
+.sidebar {
+    display: flex;
+    position: relative;
+    gap: 36px;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
+
+.bar_btn {
+    
+    width: 36px;
+    height: 36px;
+    background: rgb(228, 221, 211);
+    border-style: none;
+    border-radius: 30%;
+}
+
+/* MAP FIELD */
+
+.map {
+    position: relative;
+    /* margin-top: 90px; */
+    /* margin-left: 70px; */
+    z-index: 5;
+    grid-area: map;
+}

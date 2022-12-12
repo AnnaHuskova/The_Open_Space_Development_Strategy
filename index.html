@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin="">
+    </script>
+    <style>#map { height: 100%; }</style>
+
+    <title>Interactive_Map_OpenSpaces</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <!-- MAIN MENU -->
+        <div class="header-container _container">
+
+            <ul class="navbar">
+
+                <li class="nav_item"><a href="#"></a>Про проект</li>
+                <li class="nav_item"><a href="#"></a>Блог</li>
+                <li class="nav_item"><a href="#"></a>Місто</li>
+
+            </ul>  
+
+            <a href="#" class="nav_logo">The Open Spaces Development Strategy</a>
+
+        <!-- HUMBURGER MENU -->
+            <div class="burger-bar">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+
+    <nav class="nav">
+        <div class="sidebar">
+            
+            <button class="bar_btn"></button>
+            <button class="bar_btn"></button>
+            <button class="bar_btn"></button>
+
+        </div>
+    </nav>
+
+    <!-- <body class="body"> -->
+
+        <!-- MAP FIELD -->
+
+        <div class="map" id="map">
+
+        </div>
+        
+    <!-- </body> -->
+
+    <footer class="footer">
+
+    </footer>
+
+    <script>
+
+        const map = L.map('map').setView([48.4606, 35.06954], 20);
+        const marker = L.marker([48.4606, 35.06954]).addTo(map);
+        const polygon = L.polygon([
+        [48.45960104117359, 35.065551009070454],
+        [48.456591389150454, 35.06188174694617],
+        [48.454862359423345, 35.06528278815494],
+        [48.45771558265007, 35.06840487961157]
+        ]).addTo(map);
+    
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+    
+        const tileUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png';
+        const tiles = L.tileLayer(tileUrl, { attribution });
+        tiles.addTo(map);
+    
+        // L.marker([35.0, 48.4]).addTo(map);
+
+        // Pastel Map
+
+        // const StadiaAlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png' {
+	    // maxZoom: 20
+	    // const attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        // });
+        // StadiaAlidadeSmoot.addTo(map);
+
+    </script>
+    
+</body>
+</html>
